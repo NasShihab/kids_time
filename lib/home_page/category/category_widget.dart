@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kids_time/home_page/category/category_model.dart';
 
 import '../../custom_height.dart';
@@ -23,7 +24,9 @@ class CategoryWidget extends StatelessWidget {
           child: Material(
             child: InkWell(
               splashColor: Colors.pink,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, category[index].routes.toString());
+              },
               child: Ink(
                 width: 200.0,
                 height: 200.0,

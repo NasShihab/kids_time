@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:kids_time/home_page/home_page.dart';
+import 'package:kids_time/my_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color(0xFF0b2d39),
         ),
         debugShowCheckedModeBanner: false,
-        home: const HomePage(),
+        initialRoute: '/',
+        routes: myRoutes,
       ),
     );
   }
