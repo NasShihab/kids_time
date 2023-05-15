@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:kids_time/home_page.dart';
 
@@ -11,10 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      theme: ThemeData(brightness: Brightness.dark),
-      debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+    return ScreenUtilInit(
+      designSize: const Size(428, 926),
+      builder: (_, child) => GetMaterialApp(
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primaryColor: const Color(0xFF0b2d39),
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const HomePage(),
+      ),
     );
   }
 }
