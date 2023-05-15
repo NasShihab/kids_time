@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFf8edeb),
+      // backgroundColor: const Color(0xFFffe8d6),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
@@ -60,7 +61,55 @@ class HomePage extends StatelessWidget {
                         fontSize: 30.sp, color: Colors.deepOrange),
                   ),
                 ],
-              )
+              ),
+              GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 15.w,
+                  mainAxisSpacing: 15.h,
+                  crossAxisCount: 2,
+                ),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return Center(
+                    child: Container(
+                      width: 200.0,
+                      height: 200.0,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFffe8d6),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.15),
+                            offset: const Offset(0, 1),
+                            blurRadius: 2.0,
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image(
+                              image: const AssetImage('images/a.png'),
+                              height: 100.h,
+                              width: 100.h,
+                              fit: BoxFit.cover,
+                            ),
+                            height15(),
+                            const Text(
+                              'Hello, World!',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
