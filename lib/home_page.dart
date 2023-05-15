@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kids_time/custom_height.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,31 +9,55 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFf8edeb),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CircleAvatar(
-                backgroundImage: const AssetImage('images/a.png'),
-                radius: 20.r,
-              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.search,
-                      size: 35.sp,
-                    ),
+                  CircleAvatar(
+                    backgroundImage: const AssetImage('images/a.png'),
+                    radius: 25.r,
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.menu_open_rounded,
-                      size: 35.sp,
-                    ),
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.search,
+                          color: Colors.pink,
+                          size: 35.sp,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.menu_book,
+                          color: Colors.green,
+                          size: 35.sp,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              height10(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hello,',
+                    style: GoogleFonts.mogra(
+                        fontSize: 20.sp, color: Colors.purpleAccent),
+                  ),
+                  Text(
+                    'Kiddo,',
+                    style: GoogleFonts.mogra(
+                        fontSize: 30.sp, color: Colors.deepOrange),
                   ),
                 ],
               )
