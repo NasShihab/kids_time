@@ -3,13 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_time/custom_height.dart';
 
+import 'category/category_widget.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFf8edeb),
+      backgroundColor: const Color(0xFFe2e2e2),
       // backgroundColor: const Color(0xFFffe8d6),
       body: SafeArea(
         child: Padding(
@@ -62,54 +64,8 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              GridView.builder(
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 15.w,
-                  mainAxisSpacing: 15.h,
-                  crossAxisCount: 2,
-                ),
-                itemCount: 6,
-                itemBuilder: (context, index) {
-                  return Center(
-                    child: Container(
-                      width: 200.0,
-                      height: 200.0,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFffe8d6),
-                        borderRadius: BorderRadius.circular(10.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.15),
-                            offset: const Offset(0, 1),
-                            blurRadius: 2.0,
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image(
-                              image: const AssetImage('images/abc.png'),
-                              height: 100.h,
-                              width: 100.h,
-                              fit: BoxFit.cover,
-                            ),
-                            height15(),
-                            const Text(
-                              'Hello, World!',
-                              style: TextStyle(
-                                fontSize: 20.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
+              height15(),
+              const CategoryWidget(),
             ],
           ),
         ),
