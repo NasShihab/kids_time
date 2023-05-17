@@ -1,6 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:kids_time/home_page/category/category_model.dart';
 
 import '../../custom_height.dart';
