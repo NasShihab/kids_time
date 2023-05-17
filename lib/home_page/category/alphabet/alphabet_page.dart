@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kids_time/custom_height.dart';
 import 'package:kids_time/home_page/category/alphabet/alphabet_widget.dart';
 
-class Alphabet extends StatelessWidget {
-  const Alphabet({Key? key}) : super(key: key);
+class AlphabetPage extends StatelessWidget {
+  const AlphabetPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
