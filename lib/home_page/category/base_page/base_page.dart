@@ -4,12 +4,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_time/home_page/data_model/shape_model.dart';
 import '../../../custom_height.dart';
+import '../../controller.dart';
 import '../../data_model/number_model.dart';
-import '../alphabet/alphabet_widget.dart';
+import 'custom_grid_view.dart';
 import '../../data_model/fruit_alphabet_model.dart';
 
-class NumberPage extends StatelessWidget {
-  const NumberPage({Key? key}) : super(key: key);
+class BasePage extends StatelessWidget {
+  const BasePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -225,7 +226,7 @@ class NumberPage extends StatelessWidget {
               // const Expanded(flex: 2, child: AlphabetGridView()),
               const Expanded(
                 flex: 2,
-                child: NumericGridView(),
+                child: CustomGridView(),
               ),
             ],
           ),

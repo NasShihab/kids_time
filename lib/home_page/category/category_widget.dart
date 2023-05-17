@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kids_time/home_page/data_model/category_model.dart';
 import '../../custom_height.dart';
-import 'alphabet/alphabet_widget.dart';
+import '../controller.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({Key? key}) : super(key: key);
