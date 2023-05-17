@@ -83,34 +83,20 @@ class Alphabet extends StatelessWidget {
                                             color: Colors.redAccent),
                                       ),
                                       GestureDetector(
-                                        // onPanUpdate: (details) {
-                                        //   if (details.delta.dx > 0) {
-                                        //     if (controller
-                                        //             .selectedIndex.value !=
-                                        //         0) {
-                                        //       controller.selectedIndex.value--;
-                                        //     }
-                                        //     print("Dragging in +X direction");
-                                        //   } else if (controller
-                                        //           .selectedIndex.value !=
-                                        //       fruitList.length - 1) {
-                                        //     controller.selectedIndex.value++;
-                                        //   }
-                                        //   print("Dragging in -X direction");
-                                        // },
-                                        onHorizontalDragEnd: (DragEndDetails details) {
+                                        onHorizontalDragEnd:
+                                            (DragEndDetails details) {
                                           if (details.primaryVelocity! > 0) {
-                                            if (controller.selectedIndex.value != 0) {
+                                            if (controller
+                                                    .selectedIndex.value !=
+                                                0) {
                                               controller.selectedIndex.value--;
                                             }
-                                            print('Drag left');
-                                          }
-                                          else {
-                                            if (controller.selectedIndex.value !=
+                                          } else {
+                                            if (controller
+                                                    .selectedIndex.value !=
                                                 fruitList.length - 1) {
                                               controller.selectedIndex.value++;
                                             }
-                                            print('Drag right');
                                           }
                                         },
                                         child: CircleAvatar(
