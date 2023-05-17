@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../custom_height.dart';
+import '../../data_model/number_model.dart';
 import 'controller.dart';
-import 'data_model.dart';
+import '../../data_model/fruit_alphabet_model.dart';
 
 final controller = Get.put(SelectedIndex());
 
@@ -18,7 +19,7 @@ class LeftPan extends StatelessWidget {
       children: [
         IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Get.back();
             },
             icon: Icon(
               Icons.arrow_back_ios_new,
@@ -188,7 +189,9 @@ class AlphabetGridView extends StatelessWidget {
 }
 
 class NumericGridView extends StatelessWidget {
-  const NumericGridView({Key? key}) : super(key: key);
+  const NumericGridView({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

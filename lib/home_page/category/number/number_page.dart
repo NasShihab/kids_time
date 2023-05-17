@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../custom_height.dart';
+import '../../data_model/number_model.dart';
 import '../alphabet/alphabet_widget.dart';
-import '../alphabet/data_model.dart';
+import '../../data_model/fruit_alphabet_model.dart';
 
 class NumberPage extends StatelessWidget {
   const NumberPage({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class NumberPage extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Get.back();
                         },
                         icon: Icon(
                           Icons.arrow_back_ios_new,

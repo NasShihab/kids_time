@@ -53,9 +53,9 @@ List<FruitData> fruitList = [
       image: 'images/fruits/huckleberry.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'I',
+      title: 'Imbe',
       alphabet: 'I',
-      image: 'images/a.png',
+      image: 'images/fruits/imbe.png',
       description: 'Apple is red'),
   FruitData(
       title: 'Jack fruit',
@@ -78,9 +78,9 @@ List<FruitData> fruitList = [
       image: 'images/fruits/mango.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'N',
+      title: 'Nectarine',
       alphabet: 'N',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/nectarine.png',
       description: 'Apple is red'),
   FruitData(
       title: 'Orange',
@@ -138,68 +138,9 @@ List<FruitData> fruitList = [
       image: 'images/fruits/apple.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'Z',
+      title: 'Zucchini',
       alphabet: 'Z',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/nectarine.png',
       description: 'Apple is red'),
 ];
 
-class NumericData {
-  String numeric;
-  String numericTitle;
-
-  NumericData({required this.numeric, required this.numericTitle});
-}
-
-List<NumericData> numberData = [
-  NumericData(numeric: '1', numericTitle: 'One'),
-  NumericData(numeric: '2', numericTitle: 'Two'),
-  NumericData(numeric: '3', numericTitle: 'Three'),
-  NumericData(numeric: '4', numericTitle: 'Four'),
-  NumericData(numeric: '5', numericTitle: 'Five'),
-  NumericData(numeric: '6', numericTitle: 'Six'),
-  NumericData(numeric: '7', numericTitle: 'Seven'),
-  NumericData(numeric: '8', numericTitle: 'Eight'),
-  NumericData(numeric: '9', numericTitle: 'Nine'),
-  NumericData(numeric: '10', numericTitle: 'Ten'),
-  NumericData(numeric: '11', numericTitle: 'Eleven'),
-  NumericData(numeric: '12', numericTitle: 'Twelve'),
-  NumericData(numeric: '13', numericTitle: 'Thirteen'),
-  NumericData(numeric: '14', numericTitle: 'Fourteen'),
-  NumericData(numeric: '15', numericTitle: 'Fifteen'),
-  NumericData(numeric: '16', numericTitle: 'Sixteen'),
-  NumericData(numeric: '17', numericTitle: 'Seventeen'),
-  NumericData(numeric: '18', numericTitle: 'Eighteen'),
-  NumericData(numeric: '19', numericTitle: 'Nineteen'),
-  NumericData(numeric: '20', numericTitle: 'Twenty'),
-  NumericData(numeric: '21', numericTitle: 'Twenty one'),
-  NumericData(numeric: '22', numericTitle: 'Twenty two'),
-  NumericData(numeric: '23', numericTitle: 'Twenty three'),
-  NumericData(numeric: '24', numericTitle: 'Twenty four'),
-  NumericData(numeric: '25', numericTitle: 'Twenty five'),
-  NumericData(numeric: '26', numericTitle: 'Twenty six'),
-  NumericData(numeric: '27', numericTitle: 'Twenty seven'),
-  NumericData(numeric: '28', numericTitle: 'Twenty eight'),
-  NumericData(numeric: '29', numericTitle: 'Twenty nine'),
-  NumericData(numeric: '30', numericTitle: 'Thirty'),
-  NumericData(numeric: '31', numericTitle: 'Thirty one'),
-  NumericData(numeric: '32', numericTitle: 'Thirty two'),
-  NumericData(numeric: '33', numericTitle: 'Thirty three'),
-  NumericData(numeric: '34', numericTitle: 'Thirty four'),
-  NumericData(numeric: '35', numericTitle: 'Thirty five'),
-  NumericData(numeric: '36', numericTitle: 'Thirty six'),
-  NumericData(numeric: '37', numericTitle: 'Thirty seven'),
-  NumericData(numeric: '38', numericTitle: 'Thirty eight'),
-  NumericData(numeric: '39', numericTitle: 'Thirty nine'),
-  NumericData(numeric: '40', numericTitle: 'Forty'),
-  NumericData(numeric: '41', numericTitle: 'Forty one'),
-  NumericData(numeric: '42', numericTitle: 'Forty two'),
-  NumericData(numeric: '43', numericTitle: 'Forty three'),
-  NumericData(numeric: '44', numericTitle: 'Forty four'),
-  NumericData(numeric: '45', numericTitle: 'Forty five'),
-  NumericData(numeric: '46', numericTitle: 'Forty six'),
-  NumericData(numeric: '47', numericTitle: 'Forty seven'),
-  NumericData(numeric: '48', numericTitle: 'Forty eight'),
-  NumericData(numeric: '49', numericTitle: 'Forty nine'),
-  NumericData(numeric: '50', numericTitle: 'Fifty'),
-];
