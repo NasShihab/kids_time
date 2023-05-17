@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_time/custom_height.dart';
 import 'package:kids_time/home_page/category/alphabet/data_model.dart';
+
+import 'controller.dart';
 
 class Alphabet extends StatelessWidget {
   const Alphabet({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(SelectedIndex());
+
     return Scaffold(
       backgroundColor: const Color(0xFFddf9c1),
       body: SafeArea(
@@ -36,8 +41,79 @@ class Alphabet extends StatelessWidget {
                           fontSize: 45.sp, color: Colors.pink),
                     ),
                     Text(
-                        'An alphabet is a set of graphs or characters used to represent the'
-                            ' phonemic structure of a language.',style: TextStyle(fontSize: 20.sp),)
+                      'An alphabet is a set of graphs or characters used to represent the'
+                      ' phonemic structure of a language.',
+                      style: TextStyle(fontSize: 20.sp),
+                    ),
+                    height20(),
+                    Flexible(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: IconButton(
+                              padding: EdgeInsets.zero,
+                              onPressed: () {
+                                if (controller.selectedIndex.value != 0) {
+                                  controller.selectedIndex.value--;
+                                }
+                              },
+                              icon: Icon(
+                                Icons.arrow_back_ios_new,
+                                size: 30.sp,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 5,
+                            child: ListView.builder(
+                              itemCount: 1,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) {
+                                return Obx(
+                                  () => Column(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 100.r,
+                                        backgroundColor: Colors.transparent,
+                                        child: Image(
+                                          image: AssetImage(
+                                            fruitList[controller
+                                                    .selectedIndex.value]
+                                                .image
+                                                .toString(),
+                                          ),
+                                        ),
+                                      ),
+                                      Text(fruitList[controller
+                                          .selectedIndex.value]
+                                          .title
+                                          .toString(),style: GoogleFonts.secularOne(fontSize: 20.sp),)
+                                    ],
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
+                            child: IconButton(
+                              padding: EdgeInsets.zero,
+                              onPressed: () {
+                                if (controller.selectedIndex.value !=
+                                    fruitList.length - 1) {
+                                  controller.selectedIndex.value++;
+                                }
+                              },
+                              icon: Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                size: 30.sp,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
