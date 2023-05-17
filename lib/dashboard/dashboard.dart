@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_time/custom_height.dart';
-
 import 'category/category_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -65,6 +65,16 @@ class HomePage extends StatelessWidget {
               ),
               height15(),
               const CategoryWidget(),
+              CachedNetworkImage(
+                height: 200.h,
+                width: 400,
+                imageUrl:
+                    'https://www.dropbox.com/s/y11hs5j5qnvcy4j/second_screen.png?raw=1',
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Center(
+                    child: Text('Image Download Failed. Check your internet')),
+              ),
             ],
           ),
         ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kids_time/home_page/data_model/shape_model.dart';
 import '../../../custom_height.dart';
 import '../../controller.dart';
 import '../../data_model/number_model.dart';
+import '../../data_model/shape_model.dart';
 import 'custom_grid_view.dart';
 import '../../data_model/fruit_alphabet_model.dart';
 
@@ -190,20 +190,17 @@ class BasePage extends StatelessWidget {
                                       fruitList.length - 1) {
                                     controller.selectedIndex.value++;
                                   }
-                                }
-                               else if (controller.pageValue.value == 1) {
+                                } else if (controller.pageValue.value == 1) {
                                   if (controller.selectedIndex.value !=
                                       numberData.length - 1) {
                                     controller.selectedIndex.value++;
                                   }
-                                }
-                                else if (controller.pageValue.value == 2) {
+                                } else if (controller.pageValue.value == 2) {
                                   if (controller.selectedIndex.value !=
                                       numberData.length - 1) {
                                     controller.selectedIndex.value++;
                                   }
-                                }
-                                else if (controller.pageValue.value == 3) {
+                                } else if (controller.pageValue.value == 3) {
                                   if (controller.selectedIndex.value !=
                                       shapeData.length - 1) {
                                     controller.selectedIndex.value++;
