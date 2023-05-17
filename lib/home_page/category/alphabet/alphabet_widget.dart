@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../custom_height.dart';
 import '../../data_model/number_model.dart';
-import 'controller.dart';
+import '../../data_model/shape_model.dart';
+import '../../controller.dart';
 import '../../data_model/fruit_alphabet_model.dart';
 
 final controller = Get.put(SelectedIndex());
@@ -199,7 +200,13 @@ class NumericGridView extends StatelessWidget {
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisSpacing: 15.w, mainAxisSpacing: 15.h, crossAxisCount: 2),
-      itemCount: numberData.length,
+      itemCount: controller.pageValue.value == 0
+          ? fruitList.length
+          : controller.pageValue.value == 1
+              ? numberData.length
+              : controller.pageValue.value == 2
+                  ? numberData.length
+                  : shapeData.length,
       itemBuilder: (context, index) {
         return ClipRRect(
           borderRadius: BorderRadius.circular(15.r),
@@ -224,7 +231,14 @@ class NumericGridView extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    numberData[index].numeric.toString(),
+                    // numberData[index].numeric.toString(),
+                    controller.pageValue.value == 0
+                        ? fruitList[index].alphabet.toString()
+                        : controller.pageValue.value == 1
+                            ? numberData[index].numeric.toString()
+                            : controller.pageValue.value == 2
+                                ? numberData[index].numeric.toString()
+                                : shapeData[index].shape.toString(),
                     style: GoogleFonts.fruktur(
                         color: Colors.deepOrange, fontSize: 45.sp),
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kids_time/home_page/data_model/shape_model.dart';
 import '../../../custom_height.dart';
 import '../../data_model/number_model.dart';
 import '../alphabet/alphabet_widget.dart';
@@ -34,15 +35,24 @@ class NumberPage extends StatelessWidget {
                           size: 40.sp,
                         )),
                     Text(
-                      'Number',
+                      controller.pageValue.value == 0
+                          ? 'Alphabet'
+                          : controller.pageValue.value == 1
+                              ? 'Number'
+                              : controller.pageValue.value == 2
+                                  ? 'Reading'
+                                  : 'Shapes',
                       style: GoogleFonts.skranji(
                           fontSize: 45.sp, color: Colors.pink),
                     ),
                     Text(
-                      "Numbers are special symbols that help us count, measure, and understand "
-                      "the world around us. They are like magic codes that can tell us how"
-                      " many things there are or how far something is. We use numbers to count "
-                      "our fingers, count toys, or even count the number of friends we have. ",
+                      controller.pageValue.value == 0
+                          ? desList[0].toString()
+                          : controller.pageValue.value == 1
+                              ? desList[1].toString()
+                              : controller.pageValue.value == 2
+                                  ? desList[2].toString()
+                                  : desList[3].toString(),
                       style: TextStyle(fontSize: 20.sp),
                     ),
                     height20(),
@@ -87,20 +97,76 @@ class NumberPage extends StatelessWidget {
                                     () => Column(
                                       children: [
                                         Text(
-                                          numberData[controller
-                                                  .selectedIndex.value]
-                                              .numeric
-                                              .toString(),
+                                          controller.pageValue.value == 0
+                                              ? fruitList[controller
+                                                      .selectedIndex.value]
+                                                  .alphabet
+                                                  .toString()
+                                              : controller.pageValue.value == 1
+                                                  ? numberData[controller
+                                                          .selectedIndex.value]
+                                                      .numeric
+                                                      .toString()
+                                                  : controller.pageValue
+                                                              .value ==
+                                                          2
+                                                      ? numberData[controller
+                                                              .selectedIndex
+                                                              .value]
+                                                          .numeric
+                                                          .toString()
+                                                      : shapeData[controller
+                                                              .selectedIndex
+                                                              .value]
+                                                          .shape
+                                                          .toString(),
                                           style: GoogleFonts.secularOne(
                                               fontSize: 120.sp,
                                               color: Colors.redAccent),
                                         ),
+                                        controller.pageValue.value == 0
+                                            ? CircleAvatar(
+                                                radius: 100.r,
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                child: Image(
+                                                  image: AssetImage(
+                                                    fruitList[controller
+                                                            .selectedIndex
+                                                            .value]
+                                                        .image
+                                                        .toString(),
+                                                  ),
+                                                ),
+                                              )
+                                            : const SizedBox.shrink(),
                                         FittedBox(
                                           child: Text(
-                                            numberData[controller
-                                                    .selectedIndex.value]
-                                                .numericTitle
-                                                .toString(),
+                                            controller.pageValue.value == 0
+                                                ? fruitList[controller
+                                                        .selectedIndex.value]
+                                                    .title
+                                                    .toString()
+                                                : controller.pageValue.value ==
+                                                        1
+                                                    ? numberData[controller
+                                                            .selectedIndex
+                                                            .value]
+                                                        .numericTitle
+                                                        .toString()
+                                                    : controller.pageValue
+                                                                .value ==
+                                                            2
+                                                        ? numberData[controller
+                                                                .selectedIndex
+                                                                .value]
+                                                            .numericTitle
+                                                            .toString()
+                                                        : shapeData[controller
+                                                                .selectedIndex
+                                                                .value]
+                                                            .title
+                                                            .toString(),
                                             style: GoogleFonts.secularOne(
                                                 fontSize: 35.sp,
                                                 color: Colors.green[900]),
@@ -118,9 +184,29 @@ class NumberPage extends StatelessWidget {
                             child: IconButton(
                               padding: EdgeInsets.zero,
                               onPressed: () {
-                                if (controller.selectedIndex.value !=
-                                    fruitList.length - 1) {
-                                  controller.selectedIndex.value++;
+                                if (controller.pageValue.value == 0) {
+                                  if (controller.selectedIndex.value !=
+                                      fruitList.length - 1) {
+                                    controller.selectedIndex.value++;
+                                  }
+                                }
+                               else if (controller.pageValue.value == 1) {
+                                  if (controller.selectedIndex.value !=
+                                      numberData.length - 1) {
+                                    controller.selectedIndex.value++;
+                                  }
+                                }
+                                else if (controller.pageValue.value == 2) {
+                                  if (controller.selectedIndex.value !=
+                                      numberData.length - 1) {
+                                    controller.selectedIndex.value++;
+                                  }
+                                }
+                                else if (controller.pageValue.value == 3) {
+                                  if (controller.selectedIndex.value !=
+                                      shapeData.length - 1) {
+                                    controller.selectedIndex.value++;
+                                  }
                                 }
                               },
                               icon: Icon(
@@ -148,3 +234,15 @@ class NumberPage extends StatelessWidget {
     );
   }
 }
+
+List<String> titleList = ['XAlphabet', 'XNumber', 'XReading', 'XShapes'];
+List<String> desList = [
+  'X An alphabet is a set of graphs or characters used to represent the'
+      ' phonemic structure of a language.',
+  "X Numbers are special symbols that help us count, measure, and understand "
+      "the world around us. They are like magic codes that can tell us how"
+      " many things there are or how far something is. We use numbers to count "
+      "our fingers, count toys, or even count the number of friends we have. ",
+  'X Reading',
+  'X Shapes',
+];

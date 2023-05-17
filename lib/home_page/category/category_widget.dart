@@ -2,10 +2,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kids_time/home_page/data_model/category_model.dart';
-
 import '../../custom_height.dart';
 import 'alphabet/alphabet_widget.dart';
-
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({Key? key}) : super(key: key);
@@ -30,6 +28,7 @@ class CategoryWidget extends StatelessWidget {
                 // Navigator.pushNamed(context, category[index].routes.toString());
                 Get.toNamed(category[index].routes.toString());
                 controller.selectedIndex.value = 0;
+                controller.pageValue.value = index;
               },
               child: Ink(
                 width: 200.0,
