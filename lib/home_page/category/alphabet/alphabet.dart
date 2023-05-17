@@ -85,10 +85,16 @@ class Alphabet extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Text(fruitList[controller
-                                          .selectedIndex.value]
-                                          .title
-                                          .toString(),style: GoogleFonts.secularOne(fontSize: 20.sp),)
+                                      FittedBox(
+                                        child: Text(
+                                          fruitList[controller
+                                                  .selectedIndex.value]
+                                              .title
+                                              .toString(),
+                                          style: GoogleFonts.secularOne(
+                                              fontSize: 30.sp),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 );
@@ -128,24 +134,35 @@ class Alphabet extends StatelessWidget {
                       crossAxisCount: 2),
                   itemCount: fruitList.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      height: 70.h,
-                      width: 50.w,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFfff8f0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.15),
-                            offset: const Offset(0, 1),
-                            blurRadius: 2.0,
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(15.r),
+                      child: Material(
+                        child: InkWell(
+                          splashColor: Colors.deepPurple,
+                          onTap: () {
+                            controller.updateIndex(index);
+                          },
+                          child: Ink(
+                            height: 70.h,
+                            width: 50.w,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFfff8f0),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.15),
+                                  offset: const Offset(0, 1),
+                                  blurRadius: 2.0,
+                                ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                fruitList[index].alphabet.toString(),
+                                style: GoogleFonts.fruktur(
+                                    color: Colors.deepOrange, fontSize: 45.sp),
+                              ),
+                            ),
                           ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          fruitList[index].alphabet.toString(),
-                          style: GoogleFonts.fruktur(
-                              color: Colors.deepOrange, fontSize: 45.sp),
                         ),
                       ),
                     );
