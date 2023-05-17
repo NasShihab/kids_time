@@ -16,11 +16,9 @@ class Alphabet extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Expanded(
-                flex: 3,
-                child: GreetingsPart(),
-              ),
+              const Expanded(flex: 3, child: LeftPan()),
               width10(),
+              // const Expanded(flex: 2, child: AlphabetGridView()),
               const Expanded(
                 flex: 2,
                 child: AlphabetGridView(),

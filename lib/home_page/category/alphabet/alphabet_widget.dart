@@ -8,8 +8,8 @@ import 'data_model.dart';
 
 final controller = Get.put(SelectedIndex());
 
-class GreetingsPart extends StatelessWidget {
-  const GreetingsPart({Key? key}) : super(key: key);
+class LeftPan extends StatelessWidget {
+  const LeftPan({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -141,6 +141,7 @@ class ContentShow extends StatelessWidget {
 
 class AlphabetGridView extends StatelessWidget {
   const AlphabetGridView({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
