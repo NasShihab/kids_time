@@ -236,7 +236,7 @@ class BasePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
