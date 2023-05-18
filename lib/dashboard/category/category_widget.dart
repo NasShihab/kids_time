@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../custom_height.dart';
 import '../controller.dart';
 import '../data_model/category_model.dart';
@@ -23,7 +24,7 @@ class CategoryWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
           child: Material(
             child: InkWell(
-              splashColor: Colors.pink,
+              splashColor: Colors.black,
               onTap: () {
                 // Navigator.pushNamed(context, category[index].routes.toString());
                 Get.toNamed(category[index].routes.toString());
@@ -34,12 +35,19 @@ class CategoryWidget extends StatelessWidget {
                 width: 200.0,
                 height: 200.0,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFf6fff8),
+                  gradient: const LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xFF38b000),
+                      Color(0xFF006494),
+                    ],
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.15),
-                      offset: const Offset(0, 1),
-                      blurRadius: 2.0,
+                      color: Colors.black.withOpacity(1),
+                      offset: const Offset(0, 5),
+                      blurRadius: 5.r,
                     ),
                   ],
                 ),
@@ -56,9 +64,9 @@ class CategoryWidget extends StatelessWidget {
                       height15(),
                       Text(
                         category[index].title.toString(),
-                        style: const TextStyle(
-                            fontSize: 20.0,
-                            color: Color(0xFF540b0e),
+                        style: GoogleFonts.secularOne(
+                            fontSize: 30.sp,
+                            color: Colors.yellow,
                             fontWeight: FontWeight.bold),
                       ),
                     ],
