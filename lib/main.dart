@@ -18,6 +18,12 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.light,
           primaryColor: const Color(0xFF0b2d39),
+          pageTransitionsTheme: const PageTransitionsTheme(
+            builders: {
+              // TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+              TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
+            },
+          ),
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
