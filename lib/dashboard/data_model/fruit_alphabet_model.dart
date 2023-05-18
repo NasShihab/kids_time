@@ -133,9 +133,9 @@ List<FruitData> fruitList = [
       image: 'images/fruits/apple.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'Y',
+      title: 'Yali Pear',
       alphabet: 'Y',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/yali_pear.png',
       description: 'Apple is red'),
   FruitData(
       title: 'Zucchini',
