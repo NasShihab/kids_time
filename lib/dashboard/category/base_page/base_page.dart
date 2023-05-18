@@ -35,6 +35,7 @@ class BasePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      //Leading Icon
                       IconButton(
                         padding: EdgeInsets.zero,
                         onPressed: () {
@@ -46,6 +47,8 @@ class BasePage extends StatelessWidget {
                           color: const Color(0xFFfff8f0),
                         ),
                       ),
+
+                      //Heading
                       Text(
                         controller.pageValue.value == 0
                             ? 'Alphabet'
@@ -57,14 +60,16 @@ class BasePage extends StatelessWidget {
                         style: GoogleFonts.secularOne(
                             fontSize: 45.sp, color: Colors.pink),
                       ),
+
+                      // Description
                       Text(
                         controller.pageValue.value == 0
-                            ? desList[0].toString()
+                            ? descriptionData[0].toString()
                             : controller.pageValue.value == 1
-                                ? desList[1].toString()
+                                ? descriptionData[1].toString()
                                 : controller.pageValue.value == 2
-                                    ? desList[2].toString()
-                                    : desList[3].toString(),
+                                    ? descriptionData[2].toString()
+                                    : descriptionData[3].toString(),
                         style: TextStyle(
                           fontSize: 20.sp,
                           color: const Color(0xFFfff8f0),
@@ -78,11 +83,7 @@ class BasePage extends StatelessWidget {
                               flex: 1,
                               child: IconButton(
                                 padding: EdgeInsets.zero,
-                                onPressed: () {
-                                  if (controller.selectedIndex.value != 0) {
-                                    controller.selectedIndex.value--;
-                                  }
-                                },
+                                onPressed: clickLeft,
                                 icon: Icon(
                                   Icons.keyboard_double_arrow_left_outlined,
                                   size: 40.sp,
@@ -93,18 +94,7 @@ class BasePage extends StatelessWidget {
                             Expanded(
                               flex: 5,
                               child: GestureDetector(
-                                onHorizontalDragEnd: (DragEndDetails details) {
-                                  if (details.primaryVelocity! > 0) {
-                                    if (controller.selectedIndex.value != 0) {
-                                      controller.selectedIndex.value--;
-                                    }
-                                  } else {
-                                    if (controller.selectedIndex.value !=
-                                        fruitList.length - 1) {
-                                      controller.selectedIndex.value++;
-                                    }
-                                  }
-                                },
+                                onHorizontalDragEnd: swapMethod,
                                 child: ListView.builder(
                                   itemCount: 1,
                                   shrinkWrap: true,
@@ -112,86 +102,12 @@ class BasePage extends StatelessWidget {
                                     return Obx(
                                       () => Column(
                                         children: [
-                                          Text(
-                                            controller.pageValue.value == 0
-                                                ? fruitList[controller
-                                                        .selectedIndex.value]
-                                                    .alphabet
-                                                    .toString()
-                                                : controller.pageValue.value ==
-                                                        1
-                                                    ? numberData[
-                                                            controller
-                                                                .selectedIndex
-                                                                .value]
-                                                        .numeric
-                                                        .toString()
-                                                    : controller.pageValue
-                                                                .value ==
-                                                            2
-                                                        ? numberData[controller
-                                                                .selectedIndex
-                                                                .value]
-                                                            .numeric
-                                                            .toString()
-                                                        : shapeData[controller
-                                                                .selectedIndex
-                                                                .value]
-                                                            .shape
-                                                            .toString(),
-                                            style: GoogleFonts.secularOne(
-                                                fontSize: 120.sp,
-                                                color: Colors.redAccent),
-                                          ),
+                                          alphabetText(),
                                           controller.pageValue.value == 0
-                                              ? CircleAvatar(
-                                                  radius: 100.r,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  child: Image(
-                                                    image: AssetImage(
-                                                      fruitList[controller
-                                                              .selectedIndex
-                                                              .value]
-                                                          .image
-                                                          .toString(),
-                                                    ),
-                                                  ),
-                                                )
+                                              ? circleAvatar()
                                               : const SizedBox.shrink(),
                                           FittedBox(
-                                            child: Text(
-                                              controller.pageValue.value == 0
-                                                  ? fruitList[controller
-                                                          .selectedIndex.value]
-                                                      .title
-                                                      .toString()
-                                                  : controller.pageValue
-                                                              .value ==
-                                                          1
-                                                      ? numberData[controller
-                                                              .selectedIndex
-                                                              .value]
-                                                          .numericTitle
-                                                          .toString()
-                                                      : controller.pageValue
-                                                                  .value ==
-                                                              2
-                                                          ? numberData[controller
-                                                                  .selectedIndex
-                                                                  .value]
-                                                              .numericTitle
-                                                              .toString()
-                                                          : shapeData[controller
-                                                                  .selectedIndex
-                                                                  .value]
-                                                              .title
-                                                              .toString(),
-                                              style: GoogleFonts.secularOne(
-                                                  fontSize: 35.sp,
-                                                  color:
-                                                      const Color(0xFFfff8f0)),
-                                            ),
+                                            child: wordText(),
                                           ),
                                         ],
                                       ),
@@ -204,29 +120,7 @@ class BasePage extends StatelessWidget {
                               flex: 1,
                               child: IconButton(
                                 padding: EdgeInsets.zero,
-                                onPressed: () {
-                                  if (controller.pageValue.value == 0) {
-                                    if (controller.selectedIndex.value !=
-                                        fruitList.length - 1) {
-                                      controller.selectedIndex.value++;
-                                    }
-                                  } else if (controller.pageValue.value == 1) {
-                                    if (controller.selectedIndex.value !=
-                                        numberData.length - 1) {
-                                      controller.selectedIndex.value++;
-                                    }
-                                  } else if (controller.pageValue.value == 2) {
-                                    if (controller.selectedIndex.value !=
-                                        numberData.length - 1) {
-                                      controller.selectedIndex.value++;
-                                    }
-                                  } else if (controller.pageValue.value == 3) {
-                                    if (controller.selectedIndex.value !=
-                                        shapeData.length - 1) {
-                                      controller.selectedIndex.value++;
-                                    }
-                                  }
-                                },
+                                onPressed: clickRight,
                                 icon: Icon(
                                   Icons.keyboard_double_arrow_right_outlined,
                                   size: 40.sp,
@@ -255,8 +149,9 @@ class BasePage extends StatelessWidget {
   }
 }
 
-List<String> titleList = ['XAlphabet', 'XNumber', 'XReading', 'XShapes'];
-List<String> desList = [
+List<String> headingData = ['XAlphabet', 'XNumber', 'XReading', 'XShapes'];
+
+List<String> descriptionData = [
   'X An alphabet is a set of graphs or characters used to represent the'
       ' phonemic structure of a language.',
   "X Numbers are special symbols that help us count, measure, and understand "
@@ -266,3 +161,96 @@ List<String> desList = [
   'X Reading',
   'X Shapes',
 ];
+
+Widget alphabetText() {
+  return Text(
+    controller.pageValue.value == 0
+        ? fruitList[controller.selectedIndex.value].alphabet.toString()
+        : controller.pageValue.value == 1
+            ? numberData[controller.selectedIndex.value].numeric.toString()
+            : controller.pageValue.value == 2
+                ? numberData[controller.selectedIndex.value].numeric.toString()
+                : shapeData[controller.selectedIndex.value].shape.toString(),
+    style: GoogleFonts.secularOne(fontSize: 120.sp, color: Colors.redAccent),
+  );
+}
+
+Widget circleAvatar() {
+  return CircleAvatar(
+    radius: 100.r,
+    backgroundColor: Colors.transparent,
+    child: Image(
+      image: AssetImage(
+        fruitList[controller.selectedIndex.value].image.toString(),
+      ),
+    ),
+  );
+}
+
+Widget wordText() {
+  return Text(
+    controller.pageValue.value == 0
+        ? fruitList[controller.selectedIndex.value].title.toString()
+        : controller.pageValue.value == 1
+            ? numberData[controller.selectedIndex.value].numericTitle.toString()
+            : controller.pageValue.value == 2
+                ? numberData[controller.selectedIndex.value]
+                    .numericTitle
+                    .toString()
+                : shapeData[controller.selectedIndex.value].title.toString(),
+    style:
+        GoogleFonts.secularOne(fontSize: 35.sp, color: const Color(0xFFfff8f0)),
+  );
+}
+
+void clickLeft() {
+  if (controller.selectedIndex.value != 0) {
+    controller.selectedIndex.value--;
+  }
+}
+
+void clickRight() {
+  if (controller.pageValue.value == 0) {
+    if (controller.selectedIndex.value != fruitList.length - 1) {
+      controller.selectedIndex.value++;
+    }
+  } else if (controller.pageValue.value == 1) {
+    if (controller.selectedIndex.value != numberData.length - 1) {
+      controller.selectedIndex.value++;
+    }
+  } else if (controller.pageValue.value == 2) {
+    if (controller.selectedIndex.value != numberData.length - 1) {
+      controller.selectedIndex.value++;
+    }
+  } else if (controller.pageValue.value == 3) {
+    if (controller.selectedIndex.value != shapeData.length - 1) {
+      controller.selectedIndex.value++;
+    }
+  }
+}
+
+void swapMethod(DragEndDetails details) {
+  if (details.primaryVelocity! > 0) {
+    if (controller.selectedIndex.value != 0) {
+      controller.selectedIndex.value--;
+    }
+  } else {
+    if (controller.pageValue.value == 0) {
+      if (controller.selectedIndex.value != fruitList.length - 1) {
+        controller.selectedIndex.value++;
+      }
+    } else if (controller.pageValue.value == 1) {
+      if (controller.selectedIndex.value != numberData.length - 1) {
+        controller.selectedIndex.value++;
+      }
+    } else if (controller.pageValue.value == 2) {
+      if (controller.selectedIndex.value != numberData.length - 1) {
+        controller.selectedIndex.value++;
+      }
+    } else if (controller.pageValue.value == 3) {
+      if (controller.selectedIndex.value != shapeData.length - 1) {
+        controller.selectedIndex.value++;
+      }
+    }
+  }
+}
