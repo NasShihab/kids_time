@@ -5,8 +5,8 @@ import 'package:kids_time/custom_height.dart';
 import 'category/category_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class DashBoard extends StatelessWidget {
+  const DashBoard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -24,6 +24,12 @@ class MyApp extends StatelessWidget {
               TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
             },
           ),
+          appBarTheme: AppBarTheme(
+            centerTitle: true,
+            color: Colors.deepOrange,
+            titleTextStyle:
+                TextStyle(fontWeight: FontWeight.bold, fontSize: 25.sp),
+          ),
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
