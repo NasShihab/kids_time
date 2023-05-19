@@ -62,19 +62,7 @@ class BasePage extends StatelessWidget {
                       ),
 
                       // Description
-                      Text(
-                        controller.pageValue.value == 0
-                            ? descriptionData[0].toString()
-                            : controller.pageValue.value == 1
-                                ? descriptionData[1].toString()
-                                : controller.pageValue.value == 2
-                                    ? descriptionData[2].toString()
-                                    : descriptionData[3].toString(),
-                        style: TextStyle(
-                          fontSize: 20.sp,
-                          color: const Color(0xFFfff8f0),
-                        ),
-                      ),
+                      descriptionText(),
                       height20(),
                       Flexible(
                         child: Row(
@@ -172,6 +160,22 @@ Widget alphabetText() {
                 ? numberData[controller.selectedIndex.value].numeric.toString()
                 : shapeData[controller.selectedIndex.value].shape.toString(),
     style: GoogleFonts.secularOne(fontSize: 120.sp, color: Colors.redAccent),
+  );
+}
+
+Widget descriptionText() {
+  return Text(
+    controller.pageValue.value == 0
+        ? descriptionData[0].toString()
+        : controller.pageValue.value == 1
+            ? descriptionData[1].toString()
+            : controller.pageValue.value == 2
+                ? descriptionData[2].toString()
+                : descriptionData[3].toString(),
+    style: TextStyle(
+      fontSize: 20.sp,
+      color: const Color(0xFFfff8f0),
+    ),
   );
 }
 

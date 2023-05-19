@@ -24,7 +24,7 @@ class CategoryWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
           child: Material(
             child: InkWell(
-              splashColor: Colors.black,
+              splashColor: Colors.lightBlueAccent,
               onTap: () {
                 // Navigator.pushNamed(context, category[index].routes.toString());
                 Get.toNamed(category[index].routes.toString());
@@ -39,8 +39,8 @@ class CategoryWidget extends StatelessWidget {
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     colors: [
-                      Color(0xFF38b000),
-                      Color(0xFF006494),
+                      Color(0xFFeae2b7),
+                      Color(0xFFfcbf49),
                     ],
                   ),
                   boxShadow: [
@@ -66,7 +66,7 @@ class CategoryWidget extends StatelessWidget {
                         category[index].title.toString(),
                         style: GoogleFonts.secularOne(
                             fontSize: 30.sp,
-                            color: Colors.yellow,
+                            color: Colors.deepPurple,
                             fontWeight: FontWeight.bold),
                       ),
                     ],
