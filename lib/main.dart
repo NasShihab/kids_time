@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:kids_time/my_routes.dart';
+import 'package:kids_time/routes/my_routes.dart';
 
 void main() {
   LicenseRegistry.addLicense(() async* {

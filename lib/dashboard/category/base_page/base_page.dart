@@ -3,11 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../custom_height.dart';
+import '../../../data_model/fruit_alphabet_model.dart';
+import '../../../data_model/number_model.dart';
+import '../../../data_model/shape_model.dart';
 import '../../controller.dart';
-import '../../data_model/number_model.dart';
-import '../../data_model/shape_model.dart';
 import 'custom_grid_view.dart';
-import '../../data_model/fruit_alphabet_model.dart';
 
 class BasePage extends StatelessWidget {
   const BasePage({Key? key}) : super(key: key);

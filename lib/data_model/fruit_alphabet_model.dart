@@ -98,9 +98,9 @@ List<FruitData> fruitList = [
       image: 'images/fruits/quince.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'R',
+      title: 'Rambutan',
       alphabet: 'R',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/rambutan.png',
       description: 'Apple is red'),
   FruitData(
       title: 'Strawberry',
@@ -108,29 +108,29 @@ List<FruitData> fruitList = [
       image: 'images/fruits/strawberry.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'T',
+      title: 'Tangor',
       alphabet: 'T',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/tangor.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'U',
+      title: 'Ugni',
       alphabet: 'U',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/ugni.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'V',
+      title: 'Victory Plum',
       alphabet: 'V',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/victory_plum.png',
       description: 'Apple is red'),
   FruitData(
       title: 'Watermelon',
       alphabet: 'W',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/watermelon.png',
       description: 'Apple is red'),
   FruitData(
-      title: 'X',
+      title: 'Ximenia Caffra',
       alphabet: 'X',
-      image: 'images/fruits/apple.png',
+      image: 'images/fruits/ximenia _caffra.png',
       description: 'Apple is red'),
   FruitData(
       title: 'Yali Pear',
@@ -143,4 +143,3 @@ List<FruitData> fruitList = [
       image: 'images/fruits/nectarine.png',
       description: 'Apple is red'),
 ];
-
