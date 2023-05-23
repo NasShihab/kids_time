@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.nas" "\0"
-            VALUE "FileDescription", "kids_time" "\0"
+            VALUE "FileDescription", "Kids Time" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "kids_time" "\0"
+            VALUE "InternalName", "Kids Time" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.nas. All rights reserved." "\0"
             VALUE "OriginalFilename", "kids_time.exe" "\0"
-            VALUE "ProductName", "kids_time" "\0"
+            VALUE "ProductName", "Kids Time" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
