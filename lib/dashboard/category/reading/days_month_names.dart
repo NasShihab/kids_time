@@ -56,7 +56,7 @@ Widget myContainer({
           end: Alignment.bottomRight,
           colors: [
             Colors.red,
-            Colors.yellow,
+            Colors.deepPurple,
           ],
         ),
         borderRadius: BorderRadius.circular(10),
@@ -73,8 +73,8 @@ Widget myContainer({
           child: Text(
             text,
             style: GoogleFonts.secularOne(
-              color: Colors.black,
-              fontSize: 32.sp,
+              color: Colors.yellow,
+              fontSize: 35.sp,
               fontWeight: FontWeight.bold,
             ),
           ),

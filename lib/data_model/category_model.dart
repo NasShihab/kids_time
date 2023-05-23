@@ -7,8 +7,8 @@ class Category {
 }
 
 List<Category> category = [
-  Category('images/abc.png', 'Alphabet', '/base_page'),
-  Category('images/123.png', 'Number', '/base_page'),
+  Category('images/abc.png', 'Alphabet', '/details_screen'),
+  Category('images/123.png', 'Number', '/details_screen'),
   Category('images/read.png', 'Reading', '/reading_page'),
-  Category('images/shapes.png', 'Shapes', '/base_page'),
+  Category('images/shapes.png', 'Shapes', '/details_screen'),
 ];

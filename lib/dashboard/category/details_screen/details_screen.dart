@@ -9,8 +9,8 @@ import '../../../data_model/shape_model.dart';
 import '../../controller.dart';
 import 'custom_grid_view.dart';
 
-class BasePage extends StatelessWidget {
-  const BasePage({Key? key}) : super(key: key);
+class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
