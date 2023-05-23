@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kids_time/dashboard/category/reading/days_month_names.dart';
-import 'package:kids_time/dashboard/category/reading/reading_data.dart';
+import 'package:kids_time/dashboard/category/reading/data/reading_data.dart';
 
 class ReadingPage extends StatelessWidget {
   const ReadingPage({Key? key}) : super(key: key);
@@ -29,7 +29,9 @@ class ReadingPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (BuildContext context) =>  DaysName(dataList: monthNames,),
+                      builder: (BuildContext context) => DaysName(
+                        dataList: monthNames,
+                      ),
                     ),
                   );
                 },
@@ -39,7 +41,9 @@ class ReadingPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (BuildContext context) =>  DaysName(dataList: dayNames,),
+                      builder: (BuildContext context) => DaysName(
+                        dataList: dayNames,
+                      ),
                     ),
                   );
                 },
@@ -69,10 +73,10 @@ Widget myButton({required VoidCallback onPressed, required String title}) =>
       ),
       child: Ink(
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
+          gradient:  const LinearGradient(
             colors: [
-              Colors.red,
-              Colors.green,
+              Colors.yellow,
+              Colors.orange,
             ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -85,7 +89,10 @@ Widget myButton({required VoidCallback onPressed, required String title}) =>
           alignment: Alignment.center,
           child: Text(
             title,
-            style: GoogleFonts.secularOne(color: Colors.white, fontSize: 40.sp),
+            style: GoogleFonts.secularOne(
+              color: Colors.black,
+              fontSize: 40.sp,
+            ),
           ),
         ),
       ),
