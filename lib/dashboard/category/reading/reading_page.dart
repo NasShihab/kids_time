@@ -30,7 +30,7 @@ class ReadingPage extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (BuildContext context) => DaysName(
-                        dataList: monthNames,
+                        dataList: monthNames, appBarTitle: 'Month\'s Name',
                       ),
                     ),
                   );
@@ -42,7 +42,7 @@ class ReadingPage extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (BuildContext context) => DaysName(
-                        dataList: dayNames,
+                        dataList: dayNames, appBarTitle: 'Day\'s Name',
                       ),
                     ),
                   );
