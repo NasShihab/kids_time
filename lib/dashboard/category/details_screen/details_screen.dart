@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../custom_height.dart';
-import '../../../data_model/fruit_alphabet_model.dart';
-import '../../../data_model/number_model.dart';
-import '../../../data_model/shape_model.dart';
 import '../../controller.dart';
+import '../data_model/fruit_alphabet_model.dart';
+import '../data_model/number_model.dart';
+import '../data_model/shape_model.dart';
 import 'custom_grid_view.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -140,14 +140,18 @@ class DetailsScreen extends StatelessWidget {
 List<String> headingData = ['XAlphabet', 'XNumber', 'XReading', 'XShapes'];
 
 List<String> descriptionData = [
-  'X An alphabet is a set of graphs or characters used to represent the'
+  'An alphabet is a set of graphs or characters used to represent the'
       ' phonemic structure of a language.',
-  "X Numbers are special symbols that help us count, measure, and understand "
+  "Numbers are special symbols that help us count, measure, and understand "
       "the world around us. They are like magic codes that can tell us how"
       " many things there are or how far something is. We use numbers to count "
       "our fingers, count toys, or even count the number of friends we have. ",
   'X Reading',
-  'X Shapes',
+  'A shape is a two-dimensional figure that can be defined by its outline or boundary.'
+      ' In geometry, shapes are described by their specific characteristics such as the '
+      'number of sides, angles, and overall structure. Shapes can be categorized into '
+      'basic or elementary shapes, which include circles, squares, triangles, rectangles, '
+      'and more complex shapes derived from combining these basic shapes.',
 ];
 
 Widget alphabetText() {

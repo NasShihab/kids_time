@@ -17,5 +17,4 @@ List<ShapeModel> shapeData = [
   ShapeModel(title: "Heart", shape: "❤"),
   ShapeModel(title: "Star", shape: "★"),
   ShapeModel(title: "Crescent", shape: "☽"),
-  ShapeModel(title: "Hexagon", shape: ""),
 ];
